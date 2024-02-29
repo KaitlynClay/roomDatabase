@@ -12,24 +12,4 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val aBtn = findViewById<Button>(R.id.addBtn)
-        val cBtn = findViewById<Button>(R.id.colorBtn)
-        val txt1 = findViewById<TextView>(R.id.textView)
-        val thisView = findViewById<View>(R.id.mainLayout)
-
-        var viewModel = ViewModelProvider(this).get(MAViewModel::class.java)
-
-        txt1.text = viewModel.num.toString()
-
-        aBtn.setOnClickListener {
-            viewModel.addNum()
-            txt1.text = viewModel.num.toString()
-        }
-
-        cBtn.setOnClickListener {
-            viewModel.switchColor()
-            thisView.setBackgroundColor(viewModel.pickColor)
-        }
-
-    }
 }
